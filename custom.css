@@ -155,3 +155,16 @@
     font-size: 1.2em;
     color: #555555;
 }
+/* custom.css */
+
+/* ... (既存のCSSコード) ... */
+
+/* 画面上部の点線を非表示にする */
+.reveal .progress {
+    display: none !important;
+}
+
+/* プレゼンテーション下部のナビゲーション矢印も不要であれば以下を追加 */
+.reveal .controls {
+    display: none !important;
+}
