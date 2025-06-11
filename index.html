@@ -225,42 +225,30 @@
             transition: 'slide',
             transitionSpeed: 'slow',
             controls: true,
-            progress: true,
+            // ★★★ ここを変更しました ★★★
+            progress: false, // <-- この行を 'false' に変更することで、進捗バーを非表示にします
+            // ★★★ ここまで変更しました ★★★
             center: true,
-            // slides: true, // この行は削除またはコメントアウト
             
-            // 1920x1080 モニターに最適化するための設定
             width: 1920,   
             height: 1080,  
             margin: 0.05,  
             minScale: 0.2, 
             maxScale: 1.0, 
 
-            // ★★★ ここからが今回の変更点です ★★★
-            // キーボードの条件を定義する関数
-            // event: キーボードイベント
-            // keyboardCondition: true を返すとデフォルトのキーボード操作が有効
-            // keyboardCondition: false を返すとデフォルトのキーボード操作が無効
             keyboardCondition: function( event ) {
-                // 下矢印キー (keyCode 40) またはスペースキー (keyCode 32)
-                // または右矢印キー (keyCode 39) の場合
                 if ( event.keyCode === 40 || event.keyCode === 32 || event.keyCode === 39 ) {
-                    // 現在のスライドにまだフラグメントがあるかを確認
                     const currentSlide = Reveal.getCurrentSlide();
                     const remainingFragments = currentSlide.querySelectorAll( '.fragment:not(.visible)' );
                     
-                    // 残りのフラグメントがあれば、スライド移動はせずフラグメントを進める
                     if ( remainingFragments.length > 0 ) {
-                        return true; // デフォルトのキーボード操作（フラグメントを進める）を許可
+                        return true; 
                     } else {
-                        // 残りのフラグメントがなければ、スライド移動を無効にする
                         return false; 
                     }
                 }
-                // それ以外のキー（例: 上矢印、左矢印）は通常通り動作させる
                 return true; 
             },
-            // ★★★ ここまでが今回の変更点です ★★★
 
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
         });
