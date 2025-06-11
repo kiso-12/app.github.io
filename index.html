@@ -220,16 +220,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
     <script>
-        Reveal.initialize({
-            hash: true,
-            transition: 'slide',
-            transitionSpeed: 'slow',
-            controls: true,
-            progress: true,
-            center: true,
-            slides: true,
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-        });
-    </script>
+    Reveal.initialize({
+        hash: true,
+        transition: 'slide',
+        transitionSpeed: 'slow',
+        controls: true,
+        progress: true,
+        center: true,
+        // slides: true, // この行は削除またはコメントアウト
+        
+        // --- ★ここから追加・変更する設定★ ---
+        width: 1920,   // スライドの基準となる幅をモニターの幅に設定
+        height: 1080,  // スライドの基準となる高さをモニターの高さに設定
+        margin: 0.05,  // スライドと画面端の余白の割合（小さくするとスライドが大きく表示される）
+        minScale: 0.2, // 最小スケーリング率（デフォルト値）
+        maxScale: 1.0, // 最大スケーリング率を1.0に設定し、1920x1080以上の画面では拡大しないようにする
+        // --- ★ここまで追加・変更する設定★ ---
+
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+</script>
 </body>
 </html>
