@@ -6,7 +6,7 @@
     background: linear-gradient(135deg, #f0f8ff, #e0f2f7); /* 淡いグラデーション背景 */
 }
 
-/* テキストの基本色 */
+/* テキストの基本色と強制大文字変換の無効化 */
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -14,7 +14,7 @@
 .reveal p,
 .reveal li {
     color: #333333; /* 濃いグレーで読みやすく */
-    text-transform: none !important; /* 強制的に大文字変換を無効化 */
+    text-transform: none !important;
 }
 
 /* タイトルスライド */
@@ -22,14 +22,6 @@
     font-size: 3.5em; /* 大きめのタイトル */
     color: #007bff; /* メインカラー */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-.reveal section.present h3 {
-    color: #555555;
-    font-weight: normal;
-}
-.reveal section.present p {
-    color: #777777;
-    font-size: 0.9em;
 }
 
 /* 他のスライドの見出し */
@@ -60,36 +52,16 @@
     line-height: 1.6;
     margin-bottom: 15px;
 }
-.reveal ul {
-    list-style: disc; /* デフォルトの点を残す */
+.reveal ul,
+.reveal ol {
     padding-left: 1.5em; /* インデント */
     font-size: 1.05em;
     line-height: 1.8; /* 行間を広く */
     margin-bottom: 1em;
 }
-.reveal ul li {
-    margin-bottom: 8px; /* リスト項目間の余白 */
-}
-.reveal ol {
-    list-style: decimal;
-    padding-left: 1.5em;
-    font-size: 1.05em;
-    line-height: 1.8;
-    margin-bottom: 1em;
-}
+.reveal ul li,
 .reveal ol li {
-    margin-bottom: 8px;
-}
-
-/* 画像のスタイル */
-.reveal section img {
-    max-width: 75%; /* 画像の最大幅を少し小さく */
-    height: auto;
-    margin: 20px auto; /* 中央寄せ */
-    border: 3px solid #007bff; /* メインカラーの枠線 */
-    border-radius: 12px; /* より丸みを大きく */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* 影を強調 */
-    display: block; /* 中央寄せのため */
+    margin-bottom: 8px; /* リスト項目間の余白 */
 }
 
 /* 横並びのスタック (r-hstack) */
@@ -124,23 +96,10 @@
     transform: translateY(-5px); /* ホバーで少し浮き上がる */
 }
 
-
-/* フッター的なテキスト */
-.reveal section p small {
-    color: #888888;
-}
-
-/* 最終スライドの連絡先情報 */
-.reveal section.present:last-child p {
+/* 最終スライドの連絡先情報 (h2に適用) */
+.reveal section.present:last-child h2 {
     margin-top: 50px;
-    font-size: 1.2em;
+    font-size: 1.2em; /* 小さめのフォントサイズ */
     color: #555555;
-}
-
-/* 画面上部の点線を非表示にする */
-.reveal .progress {
-    display: none !important;
-}
-
-
+    border-bottom: none; /* 下線を削除 */
 }
