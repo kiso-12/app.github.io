@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>地方貢献アプリ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/files/reveal.js/4.3.1/theme/white.min.css">
     <link rel="stylesheet" href="custom.css"> 
 </head>
 <body>
@@ -163,15 +163,40 @@
             ---
 
             <section>
-                <h2>作成のためにこれからやること</h2>
-                <ol>
-                    <li>**玉野市への詳細ヒアリング**: 市役所、社会福祉協議会、高齢者クラブなど</li>
-                    <li>**アプリの要件定義・設計**: ヒアリングに基づいた機能とUI/UXの具体化</li>
-                    <li>**プロトタイプ開発**: MVP（最小限の機能）の実装</li>
-                    <li>**ユーザーテストと改善**: 玉野市の高齢者の方々からのフィードバック収集</li>
-                    <li>**持続可能な運営モデルの検討**: 地域連携の具体化、運営体制</li>
-                </ol>
-                <p>理論と実践を融合させ、地域に根ざしたアプリ開発に取り組みます。</p>
+                <h2>段階的開発アプローチ</h2>
+                <h3>卒業制作で目指す範囲と、その先</h3>
+                <div class="r-hstack">
+                    <div class="r-vstack">
+                        <h4>フェーズ1: 基礎学習とMVP開発</h4>
+                        <ul>
+                            <li>Python/JavaScript、Flutter/Djangoの**基礎習得**</li>
+                            <li>アプリの**最小限の機能 (MVP)** を実装</li>
+                            <li>プロフィール、基本マッチング、シンプルなチャット</li>
+                            <li>**期間目安**: 卒業制作期間中</li>
+                        </ul>
+                    </div>
+                    <div class="r-vstack">
+                        <h4>フェーズ2: ユーザーテストと改善</h4>
+                        <ul>
+                            <li>玉野市の高齢者による**実証実験**</li>
+                            <li>フィードバックに基づいた**機能改善**</li>
+                            <li>使いやすさ、安全性、安定性の向上</li>
+                            <li>**期間目安**: 卒業制作後半〜卒業後検討</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="r-hstack">
+                    <div class="r-vstack">
+                        <h4>フェーズ3: 機能拡張と運用モデル構築</h4>
+                        <ul>
+                            <li>音声通話、イベント連携、見守り機能など**新機能追加**</li>
+                            <li>玉野市やNPOとの**連携強化**</li>
+                            <li>**持続可能な運用モデル**の確立</li>
+                            <li>**期間目安**: 卒業後、継続開発の場合</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>着実にステップを踏み、実用的なアプリを目指します。</p>
             </section>
 
             ---
@@ -189,7 +214,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/files/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
@@ -205,19 +230,16 @@
             minScale: 0.2, 
             maxScale: 1.0, 
 
-            fragments: false, // アニメーション要素（fragment）を無効化
+            fragments: false, 
 
-            // キーボードの条件を定義する関数
             keyboardCondition: function( event ) {
-                // 上矢印キー (keyCode 38) または下矢印キー (keyCode 40) の場合
                 if ( event.keyCode === 38 || event.keyCode === 40 ) {
-                    return false; // 何も起こらないようにする
+                    return false; 
                 } 
-                // 左矢印キー (keyCode 37) または右矢印キー (keyCode 39) またはスペースキー (keyCode 32) の場合
                 else if ( event.keyCode === 37 || event.keyCode === 39 || event.keyCode === 32 ) {
-                    return true; // スライドの移動を許可する
+                    return true; 
                 }
-                return true; // それ以外のキーは通常通り動作させる
+                return true; 
             },
 
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
