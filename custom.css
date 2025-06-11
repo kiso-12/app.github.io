@@ -80,26 +80,6 @@
     margin-bottom: 8px;
 }
 
-/* 強調表示 (fragment) */
-.reveal .fragment {
-    opacity: 0;
-}
-.reveal .fragment.visible {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-/* fragment が動的に出現する際の動き */
-.reveal .fragment.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.reveal .fragment.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
 /* 画像のスタイル */
 .reveal section img {
     max-width: 75%; /* 画像の最大幅を少し小さく */
@@ -155,9 +135,6 @@
     font-size: 1.2em;
     color: #555555;
 }
-/* custom.css */
-
-/* ... (既存のCSSコード) ... */
 
 /* 画面上部の点線を非表示にする */
 .reveal .progress {
@@ -165,6 +142,6 @@
 }
 
 /* プレゼンテーション下部のナビゲーション矢印も不要であれば以下を追加 */
-.reveal .controls {
+/* .reveal .controls {
     display: none !important;
-}
+} */
